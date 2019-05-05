@@ -11,7 +11,7 @@ class Window(QtWidgets.QWidget):
 
         self.setWindowTitle('Registration')
         self.setFixedSize(220, 480)
-        self.setWindowIcon(QtGui.QIcon('money.png'))
+        self.setWindowIcon(QtGui.QIcon('icons/money.png'))
 
         vbox = QtWidgets.QVBoxLayout(self)
 

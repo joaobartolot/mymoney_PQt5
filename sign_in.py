@@ -37,7 +37,7 @@ class SignIn(QtWidgets.QWidget):
         self.showPasswordBtn = QtWidgets.QPushButton()
         self.showPasswordBtn.setObjectName('showPasswordBtn')
 
-        self.showPasswordBtn.setIcon(QtGui.QIcon('show.png'))
+        self.showPasswordBtn.setIcon(QtGui.QIcon('icons/show.png'))
         self.showPasswordBtn.clicked.connect(self.showPassword)
 
         self.showErrorHBox = QtWidgets.QHBoxLayout()
@@ -117,12 +117,12 @@ class SignIn(QtWidgets.QWidget):
         if self.passwordInput.echoMode() == QtWidgets.QLineEdit.Normal:
             self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Password)
 
-            self.showPasswordBtn.setIcon(QtGui.QIcon('show.png'))
+            self.showPasswordBtn.setIcon(QtGui.QIcon('icons/show.png'))
 
         else:
             self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Normal)
 
-            self.showPasswordBtn.setIcon(QtGui.QIcon('hide.png'))
+            self.showPasswordBtn.setIcon(QtGui.QIcon('icons/hide.png'))
 
 
 if __name__ == '__main__':

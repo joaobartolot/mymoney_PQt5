@@ -35,7 +35,7 @@ class Register(QtWidgets.QWidget):
         self.showPasswordBtn = QtWidgets.QPushButton()
         self.showPasswordBtn.setObjectName('showPasswordBtn')
 
-        self.showPasswordBtn.setIcon(QtGui.QIcon('show.png'))
+        self.showPasswordBtn.setIcon(QtGui.QIcon('icons/show.png'))
         self.showPasswordBtn.clicked.connect(self.showPassword)
 
         self.showErrorHBox = QtWidgets.QHBoxLayout()
@@ -148,20 +148,14 @@ class Register(QtWidgets.QWidget):
             self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Password)
             self.confirmationInput.setEchoMode(QtWidgets.QLineEdit.Password)
 
-            self.showPasswordBtn.setIcon(QtGui.QIcon('show.png'))
+            self.showPasswordBtn.setIcon(QtGui.QIcon('icons/show.png'))
 
         else:
             self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Normal)
             self.confirmationInput.setEchoMode(QtWidgets.QLineEdit.Normal)
 
-            self.showPasswordBtn.setIcon(QtGui.QIcon('hide.png'))
+            self.showPasswordBtn.setIcon(QtGui.QIcon('icons/hide.png'))
 
-#        if self.showPasswordBtn.checkState() == 2:
-#            self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Normal)
-#            self.confirmationInput.setEchoMode(QtWidgets.QLineEdit.Normal)
-#        else:
-#            self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Password)
-#            self.confirmationInput.setEchoMode(QtWidgets.QLineEdit.Password)
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
