@@ -51,14 +51,13 @@ class SignIn(QtWidgets.QWidget):
         self.signInBtn.setObjectName('signInBtn')
         self.signInBtn.clicked.connect(self.onPressed)
 
-        # --------- CREATE AN ACCOUNT  -----------#
+        # ------------ JOIN BUTTON  --------------#
         self.joinBtn = QtWidgets.QPushButton('Join us')
         self.joinBtn.setObjectName('joinBtn')
 
         self.joinLabel = QtWidgets.QLabel('New here? ')
         self.joinLabel.setAlignment(QtCore.Qt.AlignRight)
 
-        # --------------- H Layout --------------- #
         self.hbox = QtWidgets.QHBoxLayout()
 
         self.hbox.addWidget(self.joinLabel)
