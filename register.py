@@ -14,7 +14,7 @@ class Register(QtWidgets.QWidget):
         spacer2 = QtWidgets.QSpacerItem(0, 40, QtWidgets.QSizePolicy.Fixed)
         spacer3 = QtWidgets.QSpacerItem(0, 80, QtWidgets.QSizePolicy.Fixed)
 
-        # --------------- Name ---------------- #
+        # --------------- NAME ---------------- #
         self.nameLabel = QtWidgets.QLabel('Name')
         self.nameInput = QtWidgets.QLineEdit()
 
@@ -68,6 +68,8 @@ class Register(QtWidgets.QWidget):
         self.signInHBox.addWidget(self.signInLabel)
         self.signInHBox.addWidget(self.signInBtn)
 
+
+        # ---------- ARRANGING THE WIDGETS --------- #
         self.vbox.addItem(spacer1)
         self.vbox.addWidget(self.nameLabel)
         self.vbox.addWidget(self.nameInput)
@@ -91,6 +93,7 @@ class Register(QtWidgets.QWidget):
 
         self.show()
 
+    # Function to create the user in database
     def sign_up(self):
         self.usernameError.setText('')
         self.passwordError.setText('')
@@ -100,9 +103,11 @@ class Register(QtWidgets.QWidget):
         username = self.usernameInput.text()
         password = self.passwordInput.text()
         confirmation = self.confirmationInput.text()
+        # List to the usernames
         usernamesDB = list()
 
 
+        # Encrypting the password
         enkPassword = list()
 
         for letter in self.passwordInput.text():
@@ -114,19 +119,19 @@ class Register(QtWidgets.QWidget):
                 data = load()
 
                 if data['users'] == []:
-                    # checking if the password and the confirmation is the same
+                    # Checking if the password and the confirmation is the same
                     if password == confirmation:
                         register(name, username, enkPassword)
                     else: self.confirmatioError.setText('Check your confirmation')
 
                 else:
                     for accounts in data['users']:
-                        # adding the usernames to a list
+                        # Adding the usernames to a list
                         usernamesDB.append(accounts[1])
 
-                    # checking if the username already exists in the database
+                    # Checking if the username already exists in the database
                     if username not in usernamesDB:
-                        # checking if the password and the confirmation is the same
+                        # Checking if the password and the confirmation is the same
                         if password == confirmation:
                             register(name, username, enkPassword)
                         else: self.confirmationError.setText('Check your confirmation')
@@ -143,6 +148,8 @@ class Register(QtWidgets.QWidget):
             if password == '':
                 self.passwordError.setText('You have to put a password')
 
+    # Changing the show-hide password button
+    # and changing the stage of the QLineEdit
     def showPassword(self):
         if self.passwordInput.echoMode() == QtWidgets.QLineEdit.Normal:
             self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Password)
