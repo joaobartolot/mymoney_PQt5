@@ -1,0 +1,19 @@
+* arranging the .json file:
+{
+    "users":{
+      [
+        {
+        "id": "###",
+        "name": "#######",
+        "username": "#######",
+        "password": "######",
+        },
+        {
+        "id": "***",
+        "name": "*******",
+        "username": "********",
+        "password": "******",
+        }
+      ]
+      }
+ }
