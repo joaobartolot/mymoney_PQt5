@@ -46,12 +46,12 @@ class SignIn(QtWidgets.QWidget):
         self.showErrorHBox.addWidget(self.showPasswordBtn)
         self.showErrorHBox.setAlignment(self.showPasswordBtn, QtCore.Qt.AlignRight)
 
-        # ------------ ENTER BUTTON --------------#
+        # -------------- SIGN IN BUTTON ------------- #
         self.signInBtn = QtWidgets.QPushButton('Sign in')
         self.signInBtn.setObjectName('signInBtn')
         self.signInBtn.clicked.connect(self.onPressed)
 
-        # ------------ JOIN BUTTON  --------------#
+        # -------------- JOIN BUTTON ----------------#
         self.joinBtn = QtWidgets.QPushButton('Join us')
         self.joinBtn.setObjectName('joinBtn')
 
@@ -63,6 +63,7 @@ class SignIn(QtWidgets.QWidget):
         self.hbox.addWidget(self.joinLabel)
         self.hbox.addWidget(self.joinBtn)
 
+        # ---------- ARRANGING THE WIDGETS --------- #
         self.vbox.addItem(spacer3)
         self.vbox.addWidget(self.usernameLabel)
         self.vbox.addWidget(self.usernameInput)
@@ -87,6 +88,7 @@ class SignIn(QtWidgets.QWidget):
         password = self.passwordInput.text()
         users = list()
 
+        # Decrypting the password
         enkPassword = list()
 
         for letter in password:
