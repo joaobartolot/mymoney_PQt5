@@ -1,9 +1,9 @@
-QLabel#errorMensage{
+.QLabel#errorMensage{
 	font: 10px;
 	color: red;
 }
 
-QPushButton#joinBtn{
+.QPushButton#joinBtn{
 	background-color: #68B2A0;
 	color: white;
 	border-style: solid;
@@ -12,12 +12,12 @@ QPushButton#joinBtn{
 	border-radius: 10px;
 }
 
-QPushButton#signInBtn{
+.QPushButton#signInBtn{
 	color: #1F2F98;
 	text-align: left;
 	border: none;
 }
 
-QPushButton#showPasswordBtn{
+.QPushButton#showPasswordBtn{
 	border: none;
 }
