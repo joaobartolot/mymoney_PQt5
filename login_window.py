@@ -1,4 +1,5 @@
 import sys
+import shutil
 import json
 from reading_data import *
 from sign_in import SignIn
@@ -58,6 +59,10 @@ class Window(QtWidgets.QWidget):
         self.stacked.setCurrentIndex(0)
 
 if __name__ == '__main__':
+    shutil.move('signIn-stylesheet.css', 'signIn-stylesheet.qss')
+    shutil.move('register-stylesheet.css', 'register-stylesheet.qss')
     app = QtWidgets.QApplication(sys.argv)
     window = Window()
+    shutil.move('signIn-stylesheet.qss', 'signIn-stylesheet.css')
+    shutil.move('register-stylesheet.qss', 'register-stylesheet.css')
     sys.exit(app.exec_())
