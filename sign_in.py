@@ -14,21 +14,22 @@ class SignIn(QtWidgets.QWidget):
         spacer2 = QtWidgets.QSpacerItem(0, 40, QtWidgets.QSizePolicy.Fixed)
         spacer3 = QtWidgets.QSpacerItem(0, 80, QtWidgets.QSizePolicy.Fixed)
 
+
         # --------------- USERNAME ----------------#
-        self.usernameLabel = QtWidgets.QLabel('Username')
-        self.usernameLabel.setAlignment(QtCore.Qt.AlignBottom)
 
         self.usernameInput = QtWidgets.QLineEdit()
+        self.usernameInput.setPlaceholderText('Username')
+        self.usernameInput.setObjectName('userInput')
 
         self.usernameError = QtWidgets.QLabel()
         self.usernameError.setObjectName('errorMensage')
 
         # --------------- PASSWORD ---------------#
-        self.passwordLabel = QtWidgets.QLabel('Password')
-        self.passwordLabel.setAlignment(QtCore.Qt.AlignBottom)
 
         self.passwordInput = QtWidgets.QLineEdit()
+        self.passwordInput.setPlaceholderText('Password')
         self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.passwordInput.setObjectName('userInput')
 
         self.passwordError = QtWidgets.QLabel()
         self.passwordError.setObjectName('errorMensage')
@@ -65,12 +66,13 @@ class SignIn(QtWidgets.QWidget):
 
         # ---------- ARRANGING THE WIDGETS --------- #
         self.vbox.addItem(spacer3)
-        self.vbox.addWidget(self.usernameLabel)
+        self.vbox.addItem(spacer2)
+        self.vbox.addWidget(self.icon)
         self.vbox.addWidget(self.usernameInput)
         self.vbox.addWidget(self.usernameError)
-        self.vbox.addWidget(self.passwordLabel)
         self.vbox.addWidget(self.passwordInput)
         self.vbox.addLayout(self.showErrorHBox)
+        self.vbox.addItem(spacer2)
         self.vbox.addWidget(self.signInBtn)
         self.vbox.addItem(spacer2)
         self.vbox.addLayout(self.hbox)

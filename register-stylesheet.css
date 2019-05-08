@@ -21,3 +21,12 @@
 .QPushButton#showPasswordBtn{
 	border: none;
 }
+
+.QLineEdit#userInput{
+	border-bottom: 2px solid #68B2A0;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-radius: 3px;
+	background-color: #efefef;
+}
