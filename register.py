@@ -15,13 +15,11 @@ class Register(QtWidgets.QWidget):
         spacer3 = QtWidgets.QSpacerItem(0, 80, QtWidgets.QSizePolicy.Fixed)
 
         # --------------- NAME ---------------- #
-        self.nameLabel = QtWidgets.QLabel('Name')
         self.nameInput = QtWidgets.QLineEdit()
         self.nameInput.setPlaceholderText('Name')
         self.nameInput.setObjectName('userInput')
 
         # -------------- USERNAME ------------- #
-        self.usernameLabel = QtWidgets.QLabel('Username')
         self.usernameInput = QtWidgets.QLineEdit()
         self.usernameInput.setPlaceholderText('Username')
         self.usernameInput.setObjectName('userInput')
@@ -29,7 +27,6 @@ class Register(QtWidgets.QWidget):
         self.usernameError.setObjectName('errorMensage')
 
         # -------------- PASSWORD ------------- #
-        self.passwordLabel = QtWidgets.QLabel('Password')
         self.passwordInput = QtWidgets.QLineEdit()
         self.passwordInput.setPlaceholderText('Password')
         self.passwordInput.setObjectName('userInput')
@@ -51,7 +48,6 @@ class Register(QtWidgets.QWidget):
         self.showErrorHBox.setAlignment(self.showPasswordBtn, QtCore.Qt.AlignRight)
 
         # -------------- CONFIRMATION ------------- #
-        self.confirmationLabel = QtWidgets.QLabel('Confirm your password')
         self.confirmationInput = QtWidgets.QLineEdit()
         self.confirmationInput.setPlaceholderText('Confirm your password')
         self.confirmationInput.setObjectName('userInput')
@@ -78,17 +74,13 @@ class Register(QtWidgets.QWidget):
 
 
         # ---------- ARRANGING THE WIDGETS --------- #
-        self.vbox.addItem(spacer1)
-        self.vbox.addWidget(self.nameLabel)
+        self.vbox.addItem(spacer3)
         self.vbox.addWidget(self.nameInput)
         self.vbox.addItem(spacer1)
-        self.vbox.addWidget(self.usernameLabel)
         self.vbox.addWidget(self.usernameInput)
         self.vbox.addWidget(self.usernameError)
-        self.vbox.addWidget(self.passwordLabel)
         self.vbox.addWidget(self.passwordInput)
         self.vbox.addLayout(self.showErrorHBox)
-        self.vbox.addWidget(self.confirmationLabel)
         self.vbox.addWidget(self.confirmationInput)
         self.vbox.addWidget(self.confirmationError)
         self.vbox.addItem(spacer1)

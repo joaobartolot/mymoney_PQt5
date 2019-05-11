@@ -84,6 +84,8 @@ class SignIn(QtWidgets.QWidget):
     def onPressed(self):
         self.usernameError.setText('')
         self.passwordError.setText('')
+        self.passwordInput.setStyleSheet('border-color: #68B2A0;')
+        self.usernameInput.setStyleSheet('border-color: #68B2A0;')
 
         username = self.usernameInput.text()
         password = self.passwordInput.text()
@@ -107,12 +109,16 @@ class SignIn(QtWidgets.QWidget):
                 else:
                     print('pode entrar')
 
-            else: self.passwordError.setText('Please enter a password')
+            else:
+                self.passwordError.setText('Please enter a password')
+                self.passwordInput.setStyleSheet('border-color: red;')
 
         else:
             self.usernameError.setText('Please enter a username')
+            self.usernameInput.setStyleSheet('border-color: red;')
             if password == '':
                 self.passwordError.setText('Please enter a password')
+                self.passwordInput.setStyleSheet('border-color: red;')
 
 
 
