@@ -67,7 +67,6 @@ class SignIn(QtWidgets.QWidget):
         # ---------- ARRANGING THE WIDGETS --------- #
         self.vbox.addItem(spacer3)
         self.vbox.addItem(spacer2)
-        self.vbox.addWidget(self.icon)
         self.vbox.addWidget(self.usernameInput)
         self.vbox.addWidget(self.usernameError)
         self.vbox.addWidget(self.passwordInput)

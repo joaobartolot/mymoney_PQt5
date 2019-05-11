@@ -17,11 +17,13 @@ class Register(QtWidgets.QWidget):
         # --------------- NAME ---------------- #
         self.nameLabel = QtWidgets.QLabel('Name')
         self.nameInput = QtWidgets.QLineEdit()
+        self.nameInput.setPlaceholderText('Name')
         self.nameInput.setObjectName('userInput')
 
         # -------------- USERNAME ------------- #
         self.usernameLabel = QtWidgets.QLabel('Username')
         self.usernameInput = QtWidgets.QLineEdit()
+        self.usernameInput.setPlaceholderText('Username')
         self.usernameInput.setObjectName('userInput')
         self.usernameError = QtWidgets.QLabel('')
         self.usernameError.setObjectName('errorMensage')
@@ -29,6 +31,7 @@ class Register(QtWidgets.QWidget):
         # -------------- PASSWORD ------------- #
         self.passwordLabel = QtWidgets.QLabel('Password')
         self.passwordInput = QtWidgets.QLineEdit()
+        self.passwordInput.setPlaceholderText('Password')
         self.passwordInput.setObjectName('userInput')
         self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Password)
         self.passwordError = QtWidgets.QLabel('')
@@ -50,6 +53,7 @@ class Register(QtWidgets.QWidget):
         # -------------- CONFIRMATION ------------- #
         self.confirmationLabel = QtWidgets.QLabel('Confirm your password')
         self.confirmationInput = QtWidgets.QLineEdit()
+        self.confirmationInput.setPlaceholderText('Confirm your password')
         self.confirmationInput.setObjectName('userInput')
         self.confirmationInput.setEchoMode(QtWidgets.QLineEdit.Password)
 
