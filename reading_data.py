@@ -11,4 +11,4 @@ def register(username, password, name):
         data['users'].append([username, password, name])
 
         with open('database.json', 'w') as f:
-            json.dump(data, f, indent=4, sort_keys =True)
+            json.dump(data, f, indent=2, sort_keys =True)
