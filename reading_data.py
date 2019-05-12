@@ -5,10 +5,16 @@ def load():
         data = json.load(f)
     return data
 
-def register(username, password, name):
+def register(name, username, password):
         data = load()
 
-        data['users'].append([username, password, name])
+        data['users'].append(
+                {
+                    'name': name,
+                    'username': username,
+                    'password': password
+                }
+            )
 
         with open('database.json', 'w') as f:
-            json.dump(data, f, indent=2, sort_keys =True)
+            json.dump(data, f, indent=2)

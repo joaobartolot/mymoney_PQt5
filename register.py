@@ -127,7 +127,7 @@ class Register(QtWidgets.QWidget):
                 else:
                     for accounts in data['users']:
                         # Adding the usernames to a list
-                        usernamesDB.append(accounts[1])
+                        usernamesDB.append(accounts['username'])
 
                     # Checking if the username already exists in the database
                     if username not in usernamesDB:

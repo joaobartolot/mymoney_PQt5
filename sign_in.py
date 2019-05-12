@@ -101,8 +101,8 @@ class SignIn(QtWidgets.QWidget):
             if password != '':
                 data = load()
                 
-                for account in data['users']:
-                    users.append((account[1], account[2]))
+                for accounts in data['users']:
+                    users.append((accounts['username'], accounts['password']))
 
                 if (username, enkPassword) not in users:
                     print('nem tenta')
