@@ -10,7 +10,7 @@ class Window(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle('Registration')
+        self.setWindowTitle('Sign In')
         self.setFixedSize(220, 480)
         self.setWindowIcon(QtGui.QIcon('icons/money.png'))
 
@@ -39,6 +39,7 @@ class Window(QtWidgets.QWidget):
         self.show()
 
     def signIn_registration(self):
+        self.setWindowTitle('Join Us')
         sign_in.usernameInput.setText('')
         sign_in.passwordInput.setText('')
 
@@ -48,6 +49,7 @@ class Window(QtWidgets.QWidget):
         self.stacked.setCurrentIndex(1)
 
     def registration_signIn(self):
+        self.setWindowTitle('Sign In')
         register.nameInput.setText('')
         register.usernameInput.setText('')
         register.passwordInput.setText('')
