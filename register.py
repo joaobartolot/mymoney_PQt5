@@ -108,33 +108,45 @@ class Register(QtWidgets.QWidget):
             enkPassword.append(ord(letter)+7)
 
 
-        if username != '':
-            if password != '':
-                data = load()
+        if name != '':
+            if username != '':
+                if password != '':
+                    data = load()
 
-                if data['users'] == []:
-                    register(name, username, enkPassword)
-
-                else:
-                    for accounts in data['users']:
-                        # Adding the usernames to a list
-                        usernamesDB.append(accounts['username'])
-
-                    # Checking if the username already exists in the database
-                    if username not in usernamesDB:
+                    if data['users'] == []:
                         register(name, username, enkPassword)
 
                     else:
-                        self.usernameError.setText('Username already exists')
-                        self.usernameInput.setStyleSheet('border-color: red;')
+                        for accounts in data['users']:
+                            # Adding the usernames to a list
+                            usernamesDB.append(accounts['username'])
+
+                        # Checking if the username already exists in the database
+                        if username not in usernamesDB:
+                            register(name, username, enkPassword)
+
+                        else:
+                            self.usernameError.setText('Username already exists')
+                            self.usernameInput.setStyleSheet('border-color: red;')
+
+                else:
+                    self.passwordError.setText('You have to put a password')
+                    self.passwordInput.setStyleSheet('border-color: red;')
 
             else:
-                self.passwordError.setText('You have to put a password')
-                self.passwordInput.setStyleSheet('border-color: red;')
+                self.usernameError.setText('You have to put a username')
+                self.usernameInput.setStyleSheet('border-color: red;')
+
+                if password == '':
+                    self.passwordError.setText('You have to put a password')
+                    self.passwordInput.setStyleSheet('border-color: red;')
         else:
-            self.usernameError.setText('You have to put a username')
+            self.nameInput.setStyleSheet('border-color: red;')
+
+            if username == '':
+                self.usernameInput.setStyleSheet('border-color: red;')
+
             if password == '':
-                self.passwordError.setText('You have to put a password')
                 self.passwordInput.setStyleSheet('border-color: red;')
 
     # Changing the show-hide password button
