@@ -64,6 +64,7 @@ class SignIn(QtWidgets.QWidget):
         self.hbox.addWidget(self.joinLabel)
         self.hbox.addWidget(self.joinBtn)
 
+
         # ---------- ARRANGING THE WIDGETS --------- #
         self.vbox.addItem(spacer3)
         self.vbox.addItem(spacer2)

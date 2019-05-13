@@ -47,14 +47,6 @@ class Register(QtWidgets.QWidget):
         self.showErrorHBox.addWidget(self.showPasswordBtn)
         self.showErrorHBox.setAlignment(self.showPasswordBtn, QtCore.Qt.AlignRight)
 
-        # -------------- CONFIRMATION ------------- #
-        self.confirmationInput = QtWidgets.QLineEdit()
-        self.confirmationInput.setPlaceholderText('Confirm your password')
-        self.confirmationInput.setObjectName('userInput')
-        self.confirmationInput.setEchoMode(QtWidgets.QLineEdit.Password)
-
-        self.confirmationError = QtWidgets.QLabel('')
-        self.confirmationError.setObjectName('errorMensage')
 
         # -------------- JOIN BUTTON ----------------#
         self.joinBtn = QtWidgets.QPushButton('Join')
@@ -75,19 +67,19 @@ class Register(QtWidgets.QWidget):
 
         # ---------- ARRANGING THE WIDGETS --------- #
         self.vbox.addItem(spacer3)
+        self.vbox.addItem(spacer2)
         self.vbox.addWidget(self.nameInput)
         self.vbox.addItem(spacer1)
         self.vbox.addWidget(self.usernameInput)
         self.vbox.addWidget(self.usernameError)
         self.vbox.addWidget(self.passwordInput)
         self.vbox.addLayout(self.showErrorHBox)
-        self.vbox.addWidget(self.confirmationInput)
-        self.vbox.addWidget(self.confirmationError)
-        self.vbox.addItem(spacer1)
+        self.vbox.addItem(spacer2)
         self.vbox.addWidget(self.joinBtn)
         self.vbox.addItem(spacer2)
         self.vbox.addLayout(self.signInHBox)
         self.vbox.addItem(spacer2)
+        self.vbox.addItem(spacer3)
  
         self.setLayout(self.vbox)
 
@@ -97,12 +89,10 @@ class Register(QtWidgets.QWidget):
     def sign_up(self):
         self.usernameError.setText('')
         self.passwordError.setText('')
-        self.confirmationError.setText('')
 
         name = self.nameInput.text()
         username = self.usernameInput.text()
         password = self.passwordInput.text()
-        confirmation = self.confirmationInput.text()
         # List to the usernames
         usernamesDB = list()
 
@@ -119,10 +109,7 @@ class Register(QtWidgets.QWidget):
                 data = load()
 
                 if data['users'] == []:
-                    # Checking if the password and the confirmation is the same
-                    if password == confirmation:
-                        register(name, username, enkPassword)
-                    else: self.confirmatioError.setText('Check your confirmation')
+                    register(name, username, enkPassword)
 
                 else:
                     for accounts in data['users']:
@@ -131,16 +118,11 @@ class Register(QtWidgets.QWidget):
 
                     # Checking if the username already exists in the database
                     if username not in usernamesDB:
-                        # Checking if the password and the confirmation is the same
-                        if password == confirmation:
-                            register(name, username, enkPassword)
-                        else: self.confirmationError.setText('Check your confirmation')
+                        register(name, username, enkPassword)
 
                     else:
                         self.usernameError.setText('Username already exists')
 
-                        if password != confirmation:
-                            self.confirmationError.setText('Check your confirmation')
             else:
                 self.passwordError.setText('You have to put a password')
         else:
@@ -153,13 +135,11 @@ class Register(QtWidgets.QWidget):
     def showPassword(self):
         if self.passwordInput.echoMode() == QtWidgets.QLineEdit.Normal:
             self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Password)
-            self.confirmationInput.setEchoMode(QtWidgets.QLineEdit.Password)
 
             self.showPasswordBtn.setIcon(QtGui.QIcon('icons/show.png'))
 
         else:
             self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Normal)
-            self.confirmationInput.setEchoMode(QtWidgets.QLineEdit.Normal)
 
             self.showPasswordBtn.setIcon(QtGui.QIcon('icons/hide.png'))
 

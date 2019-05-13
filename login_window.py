@@ -51,7 +51,6 @@ class Window(QtWidgets.QWidget):
         register.nameInput.setText('')
         register.usernameInput.setText('')
         register.passwordInput.setText('')
-        register.confirmationInput.setText('')
 
         register.usernameError.setText('')
         register.passwordError.setText('')
