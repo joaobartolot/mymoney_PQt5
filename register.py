@@ -90,6 +90,10 @@ class Register(QtWidgets.QWidget):
         self.usernameError.setText('')
         self.passwordError.setText('')
 
+        self.nameInput.setStyleSheet('border-color: #68B2A0;')
+        self.usernameInput.setStyleSheet('border-color: #68B2A0;')
+        self.passwordInput.setStyleSheet('border-color: #68B2A0;')
+
         name = self.nameInput.text()
         username = self.usernameInput.text()
         password = self.passwordInput.text()
@@ -122,13 +126,16 @@ class Register(QtWidgets.QWidget):
 
                     else:
                         self.usernameError.setText('Username already exists')
+                        self.usernameInput.setStyleSheet('border-color: red;')
 
             else:
                 self.passwordError.setText('You have to put a password')
+                self.passwordInput.setStyleSheet('border-color: red;')
         else:
             self.usernameError.setText('You have to put a username')
             if password == '':
                 self.passwordError.setText('You have to put a password')
+                self.passwordInput.setStyleSheet('border-color: red;')
 
     # Changing the show-hide password button
     # and changing the stage of the QLineEdit

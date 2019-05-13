@@ -46,6 +46,10 @@ class Window(QtWidgets.QWidget):
         sign_in.usernameError.setText('')
         sign_in.passwordError.setText('')
 
+        sign_in.passwordInput.setStyleSheet('border-color: #68B2A0;')
+        sign_in.usernameInput.setStyleSheet('border-color: #68B2A0;')
+
+
         self.stacked.setCurrentIndex(1)
 
     def registration_signIn(self):
@@ -56,6 +60,10 @@ class Window(QtWidgets.QWidget):
 
         register.usernameError.setText('')
         register.passwordError.setText('')
+
+        register.nameInput.setStyleSheet('border-color: #68B2A0;')
+        register.passwordInput.setStyleSheet('border-color: #68B2A0;')
+        register.usernameInput.setStyleSheet('border-color: #68B2A0;')
 
         self.stacked.setCurrentIndex(0)
 

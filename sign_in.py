@@ -85,6 +85,7 @@ class SignIn(QtWidgets.QWidget):
     def onPressed(self):
         self.usernameError.setText('')
         self.passwordError.setText('')
+
         self.passwordInput.setStyleSheet('border-color: #68B2A0;')
         self.usernameInput.setStyleSheet('border-color: #68B2A0;')
 
