@@ -18,6 +18,8 @@ class Register(QtWidgets.QWidget):
         self.nameInput = QtWidgets.QLineEdit()
         self.nameInput.setPlaceholderText('Name')
         self.nameInput.setObjectName('userInput')
+        self.nameError = QtWidgets.QLabel('')
+        self.nameError.setObjectName('errorMensage')
 
         # -------------- USERNAME ------------- #
         self.usernameInput = QtWidgets.QLineEdit()
@@ -69,7 +71,7 @@ class Register(QtWidgets.QWidget):
         self.vbox.addItem(spacer3)
         self.vbox.addItem(spacer2)
         self.vbox.addWidget(self.nameInput)
-        self.vbox.addItem(spacer1)
+        self.vbox.addWidget(self.nameError)
         self.vbox.addWidget(self.usernameInput)
         self.vbox.addWidget(self.usernameError)
         self.vbox.addWidget(self.passwordInput)
@@ -142,12 +144,15 @@ class Register(QtWidgets.QWidget):
                     self.passwordInput.setStyleSheet('border-color: red;')
         else:
             self.nameInput.setStyleSheet('border-color: red;')
+            self.nameError.setText('You have to put a name')
 
             if username == '':
                 self.usernameInput.setStyleSheet('border-color: red;')
+                self.usernameError.setText('You have to put a username')
 
             if password == '':
                 self.passwordInput.setStyleSheet('border-color: red;')
+                self.passwordError.setText('You have to put a password')
 
     # Changing the show-hide password button
     # and changing the stage of the QLineEdit
