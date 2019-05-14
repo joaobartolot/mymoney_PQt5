@@ -1,4 +1,4 @@
-* arranging the .json file:
+* Arranging the .json file:
 {
 	"users":{
 		[
@@ -17,3 +17,20 @@
 		]
 	}
 }
+
+* New entity Accounts in the database:
+
+	"accounts":{
+		[
+			{
+				"id": "###",
+				"balance": "###,##",
+				"Type": "#####"
+			},
+			{
+				"id": "***",
+				"balance": "***,**",
+				"Type": "*****"
+			}
+		]
+	}

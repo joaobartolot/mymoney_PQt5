@@ -6,15 +6,18 @@ def load():
     return data
 
 def register(name, username, password):
-        data = load()
+    data = load()
 
-        data['users'].append(
-                {
-                    'name': name,
-                    'username': username,
-                    'password': password
-                }
-            )
+    data['users'].append(
+            {
+                'name': name,
+                'username': username,
+                'password': password
+            }
+        )
 
-        with open('database.json', 'w') as f:
-            json.dump(data, f, indent=2)
+    with open('database.json', 'w') as f:
+        json.dump(data, f, indent=2)
+
+def new_account(identification, balance = 0, account_type):
+    pass
