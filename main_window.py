@@ -55,6 +55,7 @@ class Account(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
+        
 
         self.show()
 

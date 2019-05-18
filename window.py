@@ -4,6 +4,7 @@ import json
 from reading_data import *
 from sign_in import SignIn
 from register import Register
+from main_window import *
 from PyQt5 import QtWidgets, QtGui, QtCore
 
 class Window(QtWidgets.QWidget):
@@ -18,6 +19,7 @@ class Window(QtWidgets.QWidget):
 
         self.stacked = QtWidgets.QStackedWidget(self)
 
+        # ---------- SIGN IN WINDOW ---------- #
         global sign_in
         sign_in = SignIn()
         self.stacked.addWidget(sign_in)
@@ -26,6 +28,7 @@ class Window(QtWidgets.QWidget):
 
         sign_in.joinBtn.clicked.connect(self.signIn_registration)
 
+        # ---------- REGISTER WINDOW ---------- #
         global register
         register = Register()
         self.stacked.addWidget(register)
@@ -33,6 +36,9 @@ class Window(QtWidgets.QWidget):
         register.setStyleSheet(open('register-stylesheet.qss', 'r').read())
 
         register.signInBtn.clicked.connect(self.registration_signIn)
+
+        # ---------- MAIN WINDOW ---------- #
+        
 
         vbox.addWidget(self.stacked)
 
