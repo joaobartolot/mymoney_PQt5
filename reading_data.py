@@ -19,5 +19,5 @@ def register(name, username, password):
     with open('database.json', 'w') as f:
         json.dump(data, f, indent=2)
 
-def new_account(identification, balance = 0, account_type):
-    pass
+#def new_account(identification, balance = 0, account_type):
+    #pass

@@ -7,12 +7,40 @@
 				"name": "#######",
 				"username": "#######",
 				"password": "######",
+				"accounts":{
+					[
+						{
+							"id": "###",
+							"balance": "###,##",
+							"Type": "#####"
+						},
+						{
+							"id": "***",
+							"balance": "***,**",
+							"Type": "*****"
+						}
+					]
+				}
 			},
 			{
 				"id": "***",
 				"name": "*******",
 				"username": "********",
 				"password": "******",
+				"accounts":{
+					[
+						{
+							"id": "###",
+							"balance": "###,##",
+							"Type": "#####"
+						},
+						{
+							"id": "***",
+							"balance": "***,**",
+							"Type": "*****"
+						}
+					]
+				}
 			}
 		]
 	}
@@ -20,17 +48,3 @@
 
 * New entity Accounts in the database:
 
-	"accounts":{
-		[
-			{
-				"id": "###",
-				"balance": "###,##",
-				"Type": "#####"
-			},
-			{
-				"id": "***",
-				"balance": "***,**",
-				"Type": "*****"
-			}
-		]
-	}
