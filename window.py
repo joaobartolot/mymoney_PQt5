@@ -11,6 +11,9 @@ class Window(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
+        signIn_stylesheet = self.load_css('signIn-stylesheet.css')
+        register_stylesheet = self.load_css('register-stylesheet.css')
+
         self.setWindowTitle('Sign In')
         self.setFixedSize(220, 480)
         self.setWindowIcon(QtGui.QIcon('icons/money.png'))
@@ -24,7 +27,7 @@ class Window(QtWidgets.QWidget):
         sign_in = SignIn()
         self.stacked.addWidget(sign_in)
 
-        sign_in.setStyleSheet(open('signIn-stylesheet.qss', 'r').read())
+        sign_in.setStyleSheet(signIn_stylesheet)
 
         sign_in.joinBtn.clicked.connect(self.signIn_registration)
 
@@ -33,7 +36,7 @@ class Window(QtWidgets.QWidget):
         register = Register()
         self.stacked.addWidget(register)
 
-        register.setStyleSheet(open('register-stylesheet.qss', 'r').read())
+        register.setStyleSheet(register_stylesheet)
 
         register.signInBtn.clicked.connect(self.registration_signIn)
 
@@ -43,6 +46,19 @@ class Window(QtWidgets.QWidget):
         vbox.addWidget(self.stacked)
 
         self.show()
+
+    def load_css(self, css_filename):
+        qss_filename = css_filename.split('.')[0] + '.qss'
+
+        shutil.move(css_filename, qss_filename)
+
+        with open(qss_filename, 'r') as f:
+            stylesheet = f.read()
+
+        shutil.move(qss_filename, css_filename)
+
+        return stylesheet
+
 
     def signIn_registration(self):
         self.setWindowTitle('Join Us')
@@ -74,10 +90,6 @@ class Window(QtWidgets.QWidget):
         self.stacked.setCurrentIndex(0)
 
 if __name__ == '__main__':
-    shutil.move('signIn-stylesheet.css', 'signIn-stylesheet.qss')
-    shutil.move('register-stylesheet.css', 'register-stylesheet.qss')
     app = QtWidgets.QApplication(sys.argv)
     window = Window()
-    shutil.move('signIn-stylesheet.qss', 'signIn-stylesheet.css')
-    shutil.move('register-stylesheet.qss', 'register-stylesheet.css')
     sys.exit(app.exec_())
