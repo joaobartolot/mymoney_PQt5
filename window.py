@@ -29,7 +29,10 @@ class Window(QtWidgets.QWidget):
 
         sign_in.setStyleSheet(signIn_stylesheet)
 
+        # Change to the register window
         sign_in.joinBtn.clicked.connect(self.signIn_registration)
+
+        sign_in.signInBtn.clicked.connect(self.signIn_mainWindow)
 
         # ---------- REGISTER WINDOW ---------- #
         global register
@@ -41,7 +44,10 @@ class Window(QtWidgets.QWidget):
         register.signInBtn.clicked.connect(self.registration_signIn)
 
         # ---------- MAIN WINDOW ---------- #
-        
+        global main_window
+        main_window = MainWindow()
+        self.stacked.addWidget(main_window)
+
 
         vbox.addWidget(self.stacked)
 
@@ -88,6 +94,15 @@ class Window(QtWidgets.QWidget):
         register.usernameInput.setStyleSheet('border-color: #68B2A0;')
 
         self.stacked.setCurrentIndex(0)
+
+    def signIn_mainWindow(self):
+
+        if sign_in.onPressed() == True:
+            self.setWindowTitle('My Money')
+            self.setFixedSize(640, 480)
+            self.move(420, 0)
+
+            self.stacked.setCurrentIndex(2)
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)

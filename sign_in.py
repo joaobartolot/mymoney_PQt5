@@ -106,10 +106,12 @@ class SignIn(QtWidgets.QWidget):
                 for accounts in data['users']:
                     users.append((accounts['username'], accounts['password']))
 
+                # 404 password or username not found!
                 if (username, enkPassword) not in users:
-                    print('nem tenta')
+                    return False
+
                 else:
-                    print('pode entrar')
+                    return True
 
             else:
                 self.passwordError.setText('Please enter a password')
@@ -118,6 +120,7 @@ class SignIn(QtWidgets.QWidget):
         else:
             self.usernameError.setText('Please enter a username')
             self.usernameInput.setStyleSheet('border-color: red;')
+
             if password == '':
                 self.passwordError.setText('Please enter a password')
                 self.passwordInput.setStyleSheet('border-color: red;')
