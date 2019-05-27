@@ -91,7 +91,10 @@ class SignIn(QtWidgets.QWidget):
 
         username = self.usernameInput.text()
         password = self.passwordInput.text()
-        users = list()
+        users = {
+                'username': [],
+                'password': []
+                }
 
         # Decrypting the password
         enkPassword = list()
@@ -104,10 +107,18 @@ class SignIn(QtWidgets.QWidget):
                 data = load()
                 
                 for accounts in data['users']:
-                    users.append((accounts['username'], accounts['password']))
+                    users['username'].append(accounts['username'])
+                    users['password'].append(accounts['password'])
 
                 # 404 password or username not found!
-                if (username, enkPassword) not in users:
+                if username not in users['username']:
+                    self.usernameError.setText("This username doesn't exists")
+                    self.usernameInput.setStyleSheet('border-color: red;')
+                    return False
+
+                elif enkPassword not in users['password']:
+                    self.passwordError.setText("Wrong password")
+                    self.passwordInput.setStyleSheet('border-color: red;')
                     return False
 
                 else:

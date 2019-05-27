@@ -13,6 +13,7 @@ class Window(QtWidgets.QWidget):
 
         signIn_stylesheet = self.load_css('signIn-stylesheet.css')
         register_stylesheet = self.load_css('register-stylesheet.css')
+        mainWindow_stylesheet = self.load_css('mainWindow-stylesheet.css')
 
         self.setWindowTitle('Sign In')
         self.setFixedSize(220, 480)
@@ -46,8 +47,10 @@ class Window(QtWidgets.QWidget):
         # ---------- MAIN WINDOW ---------- #
         global main_window
         main_window = MainWindow()
+
         self.stacked.addWidget(main_window)
 
+        main_window.setStyleSheet(mainWindow_stylesheet)
 
         vbox.addWidget(self.stacked)
 
@@ -100,7 +103,7 @@ class Window(QtWidgets.QWidget):
         if sign_in.onPressed() == True:
             self.setWindowTitle('My Money')
             self.setFixedSize(640, 480)
-            self.move(420, 0)
+            self.move(350, 145)
 
             self.stacked.setCurrentIndex(2)
 

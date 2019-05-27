@@ -9,9 +9,6 @@ class MainWindow(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle('My Money')
-        self.setFixedSize(600, 400)
-
         self.vbox = QtWidgets.QVBoxLayout()
 
         # ----------------- BALANCE ----------------- #
@@ -28,22 +25,36 @@ class MainWindow(QtWidgets.QWidget):
 
         # ----------------- OPTIONS ----------------- #
 
-        self.optionLayout = QtWidgets.QVBoxLayout()
+        self.navbar = QtWidgets.QHBoxLayout()
 
-        self.firstRow = QtWidgets.QHBoxLayout()
+        self.accountBtn = QtWidgets.QPushButton()
+        self.accountBtn.setObjectName('navbarIconProfile')
 
-        self.accountBtn = QtWidgets.QPushButton('Account')
+        self.btn1 = QtWidgets.QPushButton()
+        self.btn1.setObjectName('navbarIcon')
 
 
-        self.firstRow.addWidget(self.accountBtn)
+        self.btn2 = QtWidgets.QPushButton()
+        self.btn2.setObjectName('navbarIcon')
 
 
-        self.optionLayout.addLayout(self.firstRow)
+        self.btn3 = QtWidgets.QPushButton()
+        self.btn3.setObjectName('navbarIcon')
+
+
+        self.btn4 = QtWidgets.QPushButton()
+        self.btn4.setObjectName('navbarIcon')
+
+        self.navbar.addWidget(self.accountBtn)
+        self.navbar.addWidget(self.btn1)
+        self.navbar.addWidget(self.btn2)
+        self.navbar.addWidget(self.btn3)
+        self.navbar.addWidget(self.btn4)
 
 
         # --------------- ARRANGING --------------- #
         self.vbox.addLayout(self.balanceLayout)
-        self.vbox.addLayout(self.optionLayout)
+        self.vbox.addLayout(self.navbar)
 
         self.setLayout(self.vbox)
 
