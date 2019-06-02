@@ -1,13 +1,13 @@
 .QPushButton#navbarIconProfile{
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-left: 35px;
+	margin-right: 35px;
 	background-color: #1EB0BB;
-	padding: 20px;
+	padding: 10px;
 	background-image: url('icons/profile.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	border: 4px solid #1EB0BB;
-	border-radius: 32px;
+	border-radius: 22px;
 }
 
 .QPushButton#navbarIconAccount:hover{
@@ -16,12 +16,12 @@
 }
 
 .QPushButton#navbarIcon{
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-left: 35px;
+	margin-right: 35px;
 	background-color: #1EB0BB;
-	padding: 20px;
+	padding: 10px;
 	background-repeat: no-repeat;
 	background-position: center;
 	border: 4px solid #1EB0BB;
-	border-radius: 32px;
+	border-radius: 22px;
 }

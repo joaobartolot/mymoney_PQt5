@@ -19,14 +19,14 @@ class Register(QtWidgets.QWidget):
         self.nameInput.setPlaceholderText('Name')
         self.nameInput.setObjectName('userInput')
         self.nameError = QtWidgets.QLabel('')
-        self.nameError.setObjectName('errorMensage')
+        self.nameError.setObjectName('errorMessage')
 
         # -------------- USERNAME ------------- #
         self.usernameInput = QtWidgets.QLineEdit()
         self.usernameInput.setPlaceholderText('Username')
         self.usernameInput.setObjectName('userInput')
         self.usernameError = QtWidgets.QLabel('')
-        self.usernameError.setObjectName('errorMensage')
+        self.usernameError.setObjectName('errorMessage')
 
         # -------------- PASSWORD ------------- #
         self.passwordInput = QtWidgets.QLineEdit()
@@ -34,7 +34,7 @@ class Register(QtWidgets.QWidget):
         self.passwordInput.setObjectName('userInput')
         self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Password)
         self.passwordError = QtWidgets.QLabel('')
-        self.passwordError.setObjectName('errorMensage')
+        self.passwordError.setObjectName('errorMessage')
 
 
         self.showPasswordBtn = QtWidgets.QPushButton()

@@ -41,11 +41,11 @@ class SignIn(QtWidgets.QWidget):
         self.showPasswordBtn.setIcon(QtGui.QIcon('icons/show.png'))
         self.showPasswordBtn.clicked.connect(self.showPassword)
 
-        self.showErrorHBox = QtWidgets.QHBoxLayout()
+        self.showInputHbox = QtWidgets.QHBoxLayout()
 
-        self.showErrorHBox.addWidget(self.passwordError)
-        self.showErrorHBox.addWidget(self.showPasswordBtn)
-        self.showErrorHBox.setAlignment(self.showPasswordBtn, QtCore.Qt.AlignRight)
+        self.showInputHbox.addWidget(self.passwordInput)
+        self.showInputHbox.addWidget(self.showPasswordBtn)
+        self.showInputHbox.setAlignment(self.showPasswordBtn, QtCore.Qt.AlignRight)
 
         # -------------- SIGN IN BUTTON ------------- #
         self.signInBtn = QtWidgets.QPushButton('Sign in')
@@ -70,8 +70,8 @@ class SignIn(QtWidgets.QWidget):
         self.vbox.addItem(spacer2)
         self.vbox.addWidget(self.usernameInput)
         self.vbox.addWidget(self.usernameError)
-        self.vbox.addWidget(self.passwordInput)
-        self.vbox.addLayout(self.showErrorHBox)
+        self.vbox.addLayout(self.showInputHbox)
+        self.vbox.addWidget(self.passwordError)
         self.vbox.addItem(spacer2)
         self.vbox.addWidget(self.signInBtn)
         self.vbox.addItem(spacer2)
