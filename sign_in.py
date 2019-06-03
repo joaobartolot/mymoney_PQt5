@@ -19,7 +19,7 @@ class SignIn(QtWidgets.QWidget):
 
         self.usernameInput = QtWidgets.QLineEdit()
         self.usernameInput.setPlaceholderText('Username')
-        self.usernameInput.setObjectName('userInput')
+        self.usernameInput.setObjectName('usernameInput')
 
         self.usernameError = QtWidgets.QLabel()
         self.usernameError.setObjectName('errorMensage')
@@ -29,7 +29,7 @@ class SignIn(QtWidgets.QWidget):
         self.passwordInput = QtWidgets.QLineEdit()
         self.passwordInput.setPlaceholderText('Password')
         self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.passwordInput.setObjectName('userInput')
+        self.passwordInput.setObjectName('passwordInput')
 
         self.passwordError = QtWidgets.QLabel()
         self.passwordError.setObjectName('errorMensage')

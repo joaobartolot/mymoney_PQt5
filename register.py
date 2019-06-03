@@ -17,21 +17,21 @@ class Register(QtWidgets.QWidget):
         # --------------- NAME ---------------- #
         self.nameInput = QtWidgets.QLineEdit()
         self.nameInput.setPlaceholderText('Name')
-        self.nameInput.setObjectName('userInput')
+        self.nameInput.setObjectName('nameInput')
         self.nameError = QtWidgets.QLabel('')
         self.nameError.setObjectName('errorMessage')
 
         # -------------- USERNAME ------------- #
         self.usernameInput = QtWidgets.QLineEdit()
         self.usernameInput.setPlaceholderText('Username')
-        self.usernameInput.setObjectName('userInput')
+        self.usernameInput.setObjectName('usernameInput')
         self.usernameError = QtWidgets.QLabel('')
         self.usernameError.setObjectName('errorMessage')
 
         # -------------- PASSWORD ------------- #
         self.passwordInput = QtWidgets.QLineEdit()
         self.passwordInput.setPlaceholderText('Password')
-        self.passwordInput.setObjectName('userInput')
+        self.passwordInput.setObjectName('passwordInput')
         self.passwordInput.setEchoMode(QtWidgets.QLineEdit.Password)
         self.passwordError = QtWidgets.QLabel('')
         self.passwordError.setObjectName('errorMessage')
@@ -45,7 +45,7 @@ class Register(QtWidgets.QWidget):
 
         self.showErrorHBox = QtWidgets.QHBoxLayout()
 
-        self.showErrorHBox.addWidget(self.passwordError)
+        self.showErrorHBox.addWidget(self.passwordInput)
         self.showErrorHBox.addWidget(self.showPasswordBtn)
         self.showErrorHBox.setAlignment(self.showPasswordBtn, QtCore.Qt.AlignRight)
 
@@ -74,8 +74,8 @@ class Register(QtWidgets.QWidget):
         self.vbox.addWidget(self.nameError)
         self.vbox.addWidget(self.usernameInput)
         self.vbox.addWidget(self.usernameError)
-        self.vbox.addWidget(self.passwordInput)
         self.vbox.addLayout(self.showErrorHBox)
+        self.vbox.addWidget(self.passwordError)
         self.vbox.addItem(spacer2)
         self.vbox.addWidget(self.joinBtn)
         self.vbox.addItem(spacer2)
