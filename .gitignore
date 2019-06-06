@@ -3,3 +3,4 @@ __pycache__/
 database.json
 *.pyc
 *-2.py
+*-2.css
