@@ -1,21 +1,21 @@
 {
   "users": [
     {
+      "username": "joao",
       "password": [
         56,
         57,
         58
       ],
-      "username": "joao",
       "name": "joao"
     },
     {
+      "username": "joao_1",
       "password": [
         56,
         57,
         58
       ],
-      "username": "joao_1",
       "name": "joao 1"
     }
   ]
